@@ -1,0 +1,51 @@
+@import '../../../assets/stylus/color-variable.scss';
+@import '../../../assets/stylus/variable.scss';
+
+.disable-accordian-list{
+    border: $border-1px;
+    padding: 5px;
+    margin-bottom: 10px;
+    color: $placeholder-text;
+    cursor: not-allowed;
+    span {
+        padding-right: 10px;
+    }
+}
+
+.search-bar-content {
+    width: calc(100% - 20px);
+    background: $white;
+    z-index: 1;
+}
+
+.template-content {
+    margin-top: 80px !important;
+}
+
+.template {
+    font-size: 1em;
+    text-align: left;
+    padding: 15px 5px;
+    margin-bottom: 2px;
+    border-radius: 3px;
+    border-bottom: 1px solid $primary-color-10;
+    &:first-child {
+        margin-top: 2px;
+    }
+    &:last-child {
+        border: none;
+    }
+    &:hover {
+        cursor: pointer;
+        background: $primary-color-10;
+    }
+}
+
+.template-detail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.padding-left {
+    padding-left: 0.46rem !important;
+}

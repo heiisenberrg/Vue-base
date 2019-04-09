@@ -1,0 +1,110 @@
+@import './_mixins';
+
+/**
+ To Use Vue Transitions namely, add the below classes and 
+ use it in transitioned components.
+-enter: contain styles for when the element begins to appear at the scene
+-leave: contain styles for when the elements begins to leave the scene
+-enter-active: styles for when the transition is in place e.g transition seconds
+-leave-active: styles for when the transition is getting out of place e.g transition seconds
+-leave-to: This replaces -leave
+-enter-to: This is the ending class for enter. It is applied when -enter is removed
+ eg: <Transition name="myAnimate"> {{content}} </Transition>
+		.myAnimate-enter { transition styles}
+		.myAnimate-leave { transition styles}
+		.myAnimate-enter-active { transition styles}
+		.myAnimate-leave-active { transition styles}
+		.myAnimate-leave-to { transition styles}
+		.myAnimate-enter-to { transition styles}
+**/
+@include keyframes('fade-content') {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@include keyframes('bounce-content') {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	25% {
+		opacity: 1;
+		transform: scale(1.1);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@include keyframes('slide-in') {
+	0% {
+		opacity: 0;
+		transform: translateX(50%) scale(0) rotateZ(-30deg);
+	  }
+	100% {
+		opacity: 1;
+		transform: translateX(0) scale(1) rotateZ(0deg);
+	}
+}
+
+
+@include keyframes('flip-content') {
+	0% {
+		opacity: 0;
+		transform: rotateY(180deg);
+	  }
+	  
+	100% {
+		opacity: 1;
+		transform: rotateY(0deg);
+	}
+}
+
+.fade-container {	
+	animation: .3s ease-in-out both fade-content;
+}
+
+.bounce-container {
+	animation: .3s ease-in-out both bounce-content;
+}
+
+.slide-in {
+	animation: .4s cubic-bezier(.25, .25, .25, 1.25) both slide-in;
+}
+
+.flip-container {
+	animation: .3s ease-in-out both flip-content;
+}
+
+// Loop from 1-10
+@for $i from 1 through 10 {
+	.fade-container {	
+		&:nth-child(#{$i}) {
+			animation-delay: $i * (.03s);
+		}
+	}
+	.bounce-container {
+		&:nth-child(#{$i}) {
+			animation-delay: $i * (.03s);
+		}
+	}
+	.slide-in {
+		&:nth-child(#{$i}) {
+			animation-delay: $i * (.03s);
+		}
+	}
+	.flip-container {
+		&:nth-child(#{$i}) {
+			animation-delay: $i * (.03s);
+		}
+	}
+}

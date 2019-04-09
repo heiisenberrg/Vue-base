@@ -1,0 +1,70 @@
+@import '@/assets/stylus/color-variable.scss';
+
+.patient-name-content {
+  justify-content: space-evenly;
+  img {
+    border: 1px solid gainsboro;
+    border-radius: 50%;
+  }
+  div {
+    min-width: 100px;
+    max-width: 100px;
+  }
+}
+
+span {
+  &.unassigned {
+    border-radius: 4px;
+    width: 100px;
+    color: $red;
+    h2 {
+      display: inline;
+      font-size: 1.8em;
+    }
+  }
+
+  &.assigned {
+    @extend .unassigned;
+    color: $green;
+  }
+
+  &.paused {
+    @extend .unassigned;
+    background-color: $orange;
+  }
+
+  &.stopped {
+    @extend .unassigned;
+  }
+}
+
+.status-count-content {
+  font-size: 1em;
+  .Assigned{
+    color: $green;
+  }
+  .UnAssigned{
+    color: $red;
+  }
+  &.active {
+    .btn {
+      font-weight: bold;
+    }
+  }
+  .count {
+    font-size: 0.9em;
+  }
+  .seperator {
+    font-size: 1em;
+  }
+}
+
+.green {
+  color: $primary-color;
+}
+
+.red {
+  color: $red;
+}
+
+

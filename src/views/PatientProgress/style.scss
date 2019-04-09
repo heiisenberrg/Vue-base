@@ -1,0 +1,41 @@
+@import '../../assets/stylus/color-variable';
+
+.progress {
+  height: 0.8rem;
+  background-color: $hover-color;
+  border-radius: 3.25rem;
+}
+
+.patient-name-content {
+  justify-content: space-evenly;
+  img {
+    border: 1px solid gainsboro;
+    border-radius: 50%;
+  }
+  div {
+    min-width: 100px;
+    max-width: 100px;
+  }
+}
+
+.width {
+  width: calc(100% - 35px);
+}
+
+.circle-percent-text-body {
+  .circleContainer{
+    position: relative;
+    .fa-check{
+      position: absolute;
+      top: 30px;
+      color: $red;
+      font-size: 16px;
+
+    }
+  }
+  .title {
+    margin-top: 0;
+    font-size: 12px;
+    margin-bottom: 0.2rem;
+  }
+}

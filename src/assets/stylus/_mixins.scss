@@ -1,0 +1,126 @@
+@import './variable.scss';
+
+@mixin height-fill {
+    height: 100%;
+    height: -moz-available;
+    height: stretch;
+}
+
+@mixin width-fill {
+    width: 100%;
+    width: -moz-available;
+    width: stretch;
+}
+
+@mixin transition-ease($delay) {
+    -webkit-transition: all $delay ease; /* Safari and Chrome */
+    -moz-transition: all $delay ease; /* Firefox */
+    -ms-transition: all $delay ease; /* IE 9 */
+    -o-transition: all $delay ease; /* Opera */
+    transition: all $delay ease;
+}
+
+@mixin vertical-align-center($width, $height) {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: $width;
+    height: $height;
+    margin: auto;
+}
+
+
+@mixin appearance($value) {
+    -webkit-appearance: $value;
+    -moz-appearance:    $value;
+    appearance:         $value;
+}
+
+@mixin hide-scroll($element) {
+    #{$element}::-webkit-scrollbar {display:none;}
+    #{$element}::-moz-scrollbar {display:none;}
+    #{$element}::-o-scrollbar {display:none;}
+    #{$element}::-khtml-scrollbar {display:none;}
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin border-radius-full($top-left, $top-right, $bottom-right, $bottom-left) {
+    -webkit-border-radius: $top-left $top-right $bottom-right $bottom-left;
+    -moz-border-radius: $top-left $top-right $bottom-right $bottom-left;
+    -ms-border-radius: $top-left $top-right $bottom-right $bottom-left;
+    border-radius: $top-left $top-right $bottom-right $bottom-left;
+}
+
+@mixin push-auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+@mixin square($size) {
+    width: $size;
+    height: $size;
+}
+
+/*
+Define animation name, and properties
+Example: @include keyframes(fade-out) {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0;
+    }
+}
+*/
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}

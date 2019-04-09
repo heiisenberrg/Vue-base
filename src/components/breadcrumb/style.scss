@@ -1,0 +1,15 @@
+@import '../../assets/stylus/color-variable.scss';
+
+.breadcrum-container{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  font-size: .8em;
+  .breadcrumb {
+    margin: 0 -15px;
+    margin-bottom: 40px;
+    background-color: $white;
+    border-radius: 0;
+    padding: 0.5rem .5rem;
+  }
+}

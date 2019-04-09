@@ -1,0 +1,21 @@
+@import '../../assets/stylus/color-variable';
+
+.side-nav-bar{
+  min-height: 100vh;
+  padding: 0 !important;
+  background-color: $primary-color;
+  color: $white-text;
+  z-index: 1;
+  .nav-link{
+    border-bottom: 1px solid $primary-color-75;
+    border-radius: 0;
+    padding: 10px;
+    text-overflow: ellipsis;
+    overflow: auto;
+    color: $white-text;
+    &.active{
+      background-color: $primary-color-150;
+      color: $white-text;
+    }
+  }
+}

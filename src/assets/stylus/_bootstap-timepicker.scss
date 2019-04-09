@@ -1,0 +1,135 @@
+@import './color-variable.scss';
+
+/*!
+ * Datetimepicker for Bootstrap 3
+ * version : 4.17.37
+ * https://github.com/Eonasdan/bootstrap-datetimepicker/
+ */
+.bootstrap-datetimepicker-widget {
+  list-style: none;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  margin: 2px 0;
+  padding: 4px;
+  width: 18em;
+}
+
+.input-group.date .input-group-addon {
+  cursor: pointer;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  box-shadow: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+  &.bottom:before,
+  &.bottom:after {
+    display: none;
+  }
+  table td,
+  table th {
+    border-radius: 0;
+  }
+  table td.active,
+  table td.active:hover,
+  table td span.active {
+    background-color: $blue;
+    color: $white;
+    text-shadow: none;
+  }
+  table th {
+    height: 28px;
+    line-height: 28px;
+    width: 37px;
+  }
+  table tr:first-of-type th {
+    border-bottom: 1px solid $primary-color;
+  }
+  table td.day {
+    height: 24px;
+    line-height: 24px;
+    width: auto;
+  }
+  table td span {
+    width: 25%;
+    margin: 0;
+    border-radius: 0;
+  }  
+  .timepicker-picker table td {
+    padding: 0;
+    width: 30%;
+    height: 20px;
+    line-height: 20px;
+    &:nth-child(2) {
+      width: 10%;
+    }
+    a,
+    span,
+    button {
+      border: none;
+      border-radius: 0;
+      height: 25px;
+      padding: 0;
+      width: 100%;
+      i {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 25px;
+        margin: 2px 1.5px;
+        cursor: pointer;
+        border-radius: 0.25rem;
+      }
+    }
+    span {
+      color: $primary-text;
+      margin-top: -1px;
+    }
+    button {
+      background-color: $white;
+      color: $primary-text;
+      font-weight: bold;
+      font-size: 1.2em;
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+  }
+  .picker-switch td a {
+    line-height: 38px;
+    height: 38px;
+    padding: 0;
+    display: block;
+    span {
+      background: $primary-color-50;
+      color: $white;
+      margin-top: -1px;
+      line-height: 38px;
+      height: 38px;
+      width: 100%;
+      &:hover {
+        background: $primary-color;
+      }
+    }
+  }
+}
+
+@mixin timepicker($width) {
+  @media (min-width: $width) {
+    .bootstrap-datetimepicker-widget.dropdown-menu.timepicker-sbs {
+      @content;
+    }
+  }
+}
+@include timepicker(768px) {
+  width: 38em;
+}
+@include timepicker(992px) {
+  width: 38em;
+}
+@include timepicker(1200px) {
+  width: 38em;
+}

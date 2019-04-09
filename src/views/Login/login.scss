@@ -1,0 +1,32 @@
+ @import '@/assets/stylus/color-variable.scss';
+
+.login-container {
+  background-color: $primary-color !important;
+  margin: 0;
+  padding: 0;
+  min-width: calc(100vw - 20px);
+  min-height: 100vh;
+  .login-list{
+    margin-top: 20vh;
+    background-color: $white;
+    padding: 20px;
+    border-radius: 15px;
+    .logo{
+      img{
+        margin-top: -85px;
+        border-radius: 50%;
+        border: 5px solid $primary-color-150;
+        padding: 15px;
+        background-color: $primary-color;
+        width: 140px;
+        margin-bottom: 10px;
+      }
+    }
+    .btn-outline-primary{
+      width: 100%;
+    }
+    .error{
+      color: $red;
+    }
+  }
+}

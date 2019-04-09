@@ -1,0 +1,113 @@
+@import '../../assets/stylus/color-variable.scss';
+@import '../../assets/stylus/variable.scss';
+
+.accordion {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.card-header {
+  .total-count {
+    background-color: $purple;
+    padding: 3px 10px;
+    border-radius: 5px;
+    color: $white-text;
+    font-size: .5em;
+    margin-left: 10px;
+  }
+
+  .icon {
+    &:before {
+      font-family: "Ionicons";
+      content: "\f3d8";
+      font-style: normal;
+      font-size: 1.2em;
+    }
+  }
+
+  &.collapsed {
+    .icon {
+      &:before {
+        content: "\f3d0";
+      }
+    }
+  }
+
+  .add-button {
+    margin-right: 15px;
+    color: $blue;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+.card-body {
+  padding: 10px;
+  background-color: $primary-color-10;
+  max-height: 340px;
+  min-height: 140px;
+  overflow: auto;
+}
+
+.card-inner-container {
+  background-color: $white;
+  border: $border-1px;
+  color: $secondary-text;
+  padding: 8px 8px 0px 8px;
+  min-height: 100px;
+  border-radius: 3px;
+
+  .title {
+    height: 85px;
+    overflow: hidden;
+  }
+
+  .footer {
+    font-size: .8em;
+
+    .text-left {
+      font-weight: 700;
+    }
+
+    .text-right {
+      cursor: pointer;
+      color: $blue;
+    }
+  }
+}
+
+.pain-content {
+  .gradient {
+    height: 5px;
+    width: 100%;
+    background-image: linear-gradient(to right, $yellowgreen, $yellow, $orange, $orangered);
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+
+  padding: 10px;
+  border: $border-1px;
+  border-radius: 4px;
+
+  .form-group {
+    margin-bottom: 0 !important;
+  }
+}
+
+.reminder-content {
+  .reminders {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .time-picker {
+      margin-left: 10px;
+    }
+  }
+}

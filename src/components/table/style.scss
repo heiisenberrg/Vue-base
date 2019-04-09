@@ -1,0 +1,101 @@
+@import '../../assets/stylus/color-variable';
+
+button {
+  &.page-link {
+    color: $primary-color;
+  }
+}
+
+.table {
+  font-size: .8rem;
+  tr:nth-child(even) {
+    background-color: $tr-even-clr !important;
+  }
+  &.table-hover {
+    tr {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  thead {
+    th {
+      text-align: center;
+      vertical-align: middle;
+      border-bottom: 0 !important;
+      border-top: 0 !important;
+    }
+  }
+  tbody {
+    td {
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid $border-color !important;
+      padding: 5px !important;
+      button{
+        font-size: inherit;
+      }
+      .btn{
+        font-size: inherit;
+      }
+    }
+  }
+  tfoot {
+    tr {
+      td {
+        border: none !important;  
+      }
+      border: none !important;
+    }
+    nav {
+      align-self: center;
+      display: flex;
+      justify-content: space-between;
+      .page-link {
+        border: 0;
+        a {
+          outline: unset !important;
+          box-shadow: unset !important;
+        }
+      }
+      .page-item {
+        border: 0;
+        cursor: pointer;
+        &.disabled {
+          cursor: not-allowed;
+        }
+        button {
+          outline: unset !important;
+          box-shadow: unset !important;
+        }
+      }
+      h6 {
+        font-size: 15px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.fa {
+  cursor: pointer;
+}
+
+.m-b-0 {
+  margin-bottom: 0;
+}
+
+.page-link {
+  &.active {
+    font-weight: 600;
+    transform: scale(1.2, 1.2);
+  }
+}
+
+@media (max-width: 770px) {
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+}
